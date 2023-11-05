@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Handjet";
+}
+
+body{
+    height: 100svh;
+    width: 100vw;
+    background-color: #0e0e2b;
+}
+
+main{
+    display: flex;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+aside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 35%;
+}
+
+.rick-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    margin-right: -.45em;
+    margin-top: -1.6em;
+    width: 21em;
+    z-index: -1;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    height: 15.5em;
+    width: 9em;
+    border-radius: 100vw;
+    background-color: #ecdacc;
+    border: .2em solid black;
+    overflow: hidden;
+}
+
+.eyebrows{
+    display: flex;
+    position: relative;
+    top: 3em;
+    width: 92%;
+    z-index: 2;
+}
+
+.eyebrows div{
+    width: 50%;
+    height: .8em;
+    border: .2em solid black;
+    background-color: #b6e9fb;
+    transition: transform .4s ease;
+}
+
+.eyebrows::after, .eyebrows::before{
+    content: '';
+    position: absolute;
+    top: .2em;
+    width: 40%;
+    height: calc(100% - .4em);
+    background-color: #b6e9fb;
+    z-index: 1;
+    transition: transform .4s ease;
+}
+
+.eyebrows::after{
+    left: 1.06em;
+}
+
+.eyebrows::before{
+    right: 1.06em;
+}
+
+.eyebrows.enerve::after{
+    transform: translateY(0.74em) rotate(20deg);
+}
+
+.eyebrows.enerve::before{
+    transform: translateY(0.74em) rotate(-20deg);
+}
+
+.eyebrows.triste::after{
+    transform: translateY(-0.53em) rotate(-20deg);
+}
+
+.eyebrows.triste::before{
+    transform: translateY(-0.53em) rotate(20deg);
+}
+
+
+.eyebrow-left{
+    border-right: none !important;
+    border-radius: 100vw 0 0 100vw;
+}
+
+.eyebrow-right{
+    border-left: none !important;
+    border-radius: 0 100vw 100vw 0;
+}
+
+.enerve .eyebrow-left{
+    transform: translateY(.5em) rotate(20deg) translate(.33em);
+}
+
+.enerve .eyebrow-right{
+    transform: translateY(.5em) rotate(-20deg) translate(-.33em);
+}
+
+.triste .eyebrow-left{
+    transform: translateY(-.3em) rotate(-20deg) translate(.33em);
+}
+
+.triste .eyebrow-right{
+    transform: translateY(-.3em) rotate(20deg) translate(-.33em);
+}
+
+.eyes{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 2.45em;
+    width: 95%;
+    z-index: 1;
+}
+
+.eye{
+    position: relative;
+    width: 4.1em;
+    height: 4.1em;
+    box-sizing: border-box;
+    border: .2em solid black;
+    border-radius: 100vw;
+    background: linear-gradient(#ecdacc 0 40%, white 40% 100%);
+    z-index: 0;
+}
+
+.eye::after{
+    content: '';
+    position: absolute;
+    bottom: -.8em;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: 80%;
+    border: .2em black solid;
+    border-radius: 100vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0 .1em 0em 0em rgba(0, 0, 0, .25);
+}
+
+.eye::before{
+    content: '';
+    position: absolute;
+    bottom: -.1em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 108%;
+    height: 108%;
+    border: .25em #ecdacc solid;
+    border-radius: 100vw;
+    z-index: 1;
+}
+
+.paupiere{
+    position: absolute;
+    top: .2em;
+    height: 38%;
+    width: 100%;
+    border-radius: 100vw 100vw 0 0;
+    border-bottom: black .2em solid;
+    background-color: #ecdacc;
+    z-index: 1;
+    transition: top .08s, border-radius .08s, height .08s;
+}
+
+.pupil{
+    position: absolute;
+    left: calc(100%);
+    top: 51.8%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: .8em;
+    width: .8em;
+    border-radius: 100vw;
+    background-color: black;
+}
+
+.nose{
+    position: relative;
+    top: 2.4em;
+    height: 2.5em;
+    width: 1em;
+    border: .2em solid black;
+    border-radius: 0 0 100vw 100vw;
+    border-top: none;
+    z-index: 1;
+}
+
+.nose::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: .3em;
+    border-radius: 0 0 100vw 100vw;
+    background-color: rgba(250, 250, 250, .5);
+}
+
+.nose::after{
+    content: '';
+    position: absolute;
+    right: -.2em;
+    top: 0;
+    width: .2em;
+    height: .5em;
+    background-color: #ecdacc;
+}
+
+.mouth{
+    position: relative;
+    top: 2.6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 2em;
+    border-radius: 100vw;
+    border: .2em solid black;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+}
+
+video{
+    position: relative;
+    top: -.15em;
+    height: 10em;
+    width: 80%;
+    object-fit: cover;
+}
+
+.mouth .bar{
+    display: none;
+    left: 50%;
+    transform: translate(-50%);
+    width: 80%;
+    height: .1em;
+    border-radius: 100vw;
+    background-color: black;
+}
+
+.books-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    user-select: none;
+    z-index: 2;
+}
+
+.disappear-books{
+    animation: disappearBooks 1.5s forwards;
+}
+
+.change-date{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20em;
+    margin-bottom: 2em;
+    z-index: 2;
+}
+
+.change-date p{
+    margin-top: -1.7em;
+    font-size: 3em;
+    text-align: center;
+    color: white;
+}
+
+.arrow-right, .arrow-left{
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.arrow-right{
+    opacity: 0;
+    pointer-events: none;
+    rotate: 180deg;
+}
+
+.show-row{
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.books{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(8, 4.5em);
+}
+
+.book-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6em;
+    color: white;
+    overflow-x: hidden !important;
+}
+
+.book-group.opened{
+    color: black;
+}
+
+.bookicon{
+    width: 5em;
+    height: 5em;
+    cursor: pointer !important;
+    z-index: 0;
+}
+
+.active-book{
+    animation: moveBook 3s infinite reverse ease-in-out;
+}
+
+.bookicon-date{
+    position: absolute;
+    margin-left: .2em;
+    margin-top: -1em;
+    font-size: 1.6em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.opened .bookicon-date{
+    margin-top: -1.4em;
+}
+
+.write-book{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    height: 100svh;
+    align-items: center;
+    width: 100vw;
+    z-index: 3;
+}
+
+.page{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40em;
+    width: 30em;
+    max-height: 80svh;
+    max-width: 60svh;
+    background-color: white;
+    box-shadow: 0 0 5em inset #ffedb5;
+}
+
+.page::after{
+    content: '';
+    top: -.90em;
+    left: -.90em;
+    position: absolute;
+    height: 99%;
+    width: 99%;
+    border: #d42b2a 1em solid;
+    border-radius: 1.5em;
+    pointer-events: none;
+}
+
+textarea{
+    resize: none;
+    height: 90% ;
+    width: 90%  ;
+    font-size: 2.4em;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}   
+
+@media screen and (max-width: 1040px) {
+
+    aside{
+        position: absolute;
+        width: 100%;
+        opacity: .5;
+    }
+
+    .change-date p{
+        margin-top: 0;
+    }
+
+    .arrow-left, .arrow-right{
+        position: relative;
+        top: 1em;
+    }
+
+    .books-container{
+        width: 100%;
+        height: fit-content;
+        min-height: 100svh;
+    }
+
+    .disappear-books{
+        animation: disappearBooksMobile 1.5s forwards;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body{
+        font-size: 2.22222vw;
+    }
+}
+
+@keyframes moveBook{
+    0% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -1em;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+@keyframes disappearBooks {
+    from{
+        position: relative;
+        left: 0;
+    }
+
+    to{
+        position: relative;
+        left: 65vw;
+    }
+}
+
+@keyframes disappearBooksMobile {
+    from{
+        position: relative;
+        left: 0;
+    }
+
+    to{
+        position: relative;
+        left: 100vw;
+    }
+}
