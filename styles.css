@@ -394,15 +394,20 @@ video{
     pointer-events: none;
 }
 
-textarea{
+#page{
     resize: none;
-    height: 90% ;
-    width: 90%  ;
+    width: 90%;
+    height: 90%;
     font-size: 2.4em;
     background-color: transparent;
     border: none;
     outline: none;
-    text-decoration: underline;
+    line-height: 1.4em;
+    background-image: linear-gradient(transparent, transparent 1.38em, black 0em);
+    background-size: 80% 1.4em;
+    background-repeat: repeat;
+    background-position: bottom;
+    background-attachment: local !important;
 }   
 
 @media screen and (max-width: 1040px) {
